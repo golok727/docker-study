@@ -1,0 +1,17 @@
+{
+	"scripts": {
+		"start": "node src/radha.js",
+		"dev": "nodemon src/radha.js"
+	},
+	"type": "module",
+	"main": "radha.js",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.18.2",
+		"mongoose": "^7.5.4",
+		"morgan": "^1.10.0"
+	},
+	"devDependencies": {
+		"nodemon": "^3.0.1"
+	}
+}

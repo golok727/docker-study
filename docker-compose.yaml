@@ -1,0 +1,24 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=radha
+      - MONGO_INITDB_ROOT_PASSWORD=krsna
+    volumes:
+      - db:/data/db
+
+  application:
+    depends_on:
+      - mongodb
+    build: ./
+    stdin_open: true
+    image: radha-krsna:1.0
+    ports:
+      - 8080:8080
+    environment:
+      - MONGO_URI=mongodb://radha:krsna@mongodb:27017/golok
+volumes:
+  db:
